@@ -1,0 +1,22 @@
+[
+    {
+        "codigo_producto": "PN-001",
+        "nombre": "Pan Integral",
+        "categoria": "Panes",
+        "descripcion": "Pan de harina integral con semillas.",
+        "proveedor": "Panadería Natural",
+        "cantidad_en_stock": 50,
+        "precio_venta": 3.5,
+        "precio_proveedor": 2.0
+    },
+    {
+        "codigo_producto": "PS-002",
+        "nombre": "Pastel de Chocolate",
+        "categoria": "Pastel",
+        "descripcion": "Pastel de chocolate con cobertura cremosa.",
+        "proveedor": "Pastelería Dulce Tentación",
+        "cantidad_en_stock": 20,
+        "precio_venta": 15.0,
+        "precio_proveedor": 10.0
+    }
+]
