@@ -24,5 +24,21 @@ def updateInventoryByCode(product_code):
             print(f"Se actualizó el {product_code} a {stock}")
     print(saveAll(data))
 
+def newProduct(codigo_producto, nombre, categoria, descripcion, proveedor, cantidad_en_stock, precio_venta, precio_proveedor):
+    data = findAll()
+    newProduct = {
+        "codigo_producto": codigo_producto,
+        "nombre": nombre,
+        "categoria": categoria,
+        "descripcion": descripcion,
+        "proveedor": proveedor,
+        "cantidad_en_stock": cantidad_en_stock,
+        "precio_venta": precio_venta,
+        "precio_proveedor": precio_proveedor
+    }
+    data.append(newProduct)
+    saveAll(data)
+    return "Producto agregado exitosamente"
+
 
 

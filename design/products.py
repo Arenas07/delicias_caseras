@@ -1,15 +1,24 @@
 from logic.products import findAll
 from tabulate import tabulate
-def design():
-    print("""
-    Menu de productos
-        1. Ver productos
-        2. Ver productos por categoria
-        3. Actualizar el inventario de un producto
-        4. Agregar un nuevo producto al stock
-        0. Salir 
-    """)
-    return int(input())
+
+def obtener_opcion():
+    while True:
+        try:
+            print("""
+            Menu de productos
+                1. Ver productos
+                2. Ver productos por categoria
+                3. Actualizar el inventario de un producto
+                4. Agregar un nuevo producto al stock
+                0. Salir 
+            """)
+            opcion = int(input())
+            if 0 <= opcion <= 4:  # Asegura que la opción esté dentro de un rango válido
+                return opcion
+            else:
+                print("Por favor, ingrese un número entre 1 y 4.")
+        except ValueError:
+            print("Error: Por favor ingrese un número válido.")
 
 def tableProducts():
     data = findAll()
@@ -31,5 +40,4 @@ def tableProductsByCategory(Category):
             diccionario.pop("precio_proveedor")
             dataModify.append(diccionario)
     print(tabulate(dataModify, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
-
 
