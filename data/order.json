@@ -4,8 +4,18 @@
         "codigo_cliente": "CL-001",
         "fecha_pedido": "2024-10-01",
         "detalles_pedido": [
-            {"codigo_producto": "PN-001", "cantidad": 3, "precio_unidad": 3.5, "numero_linea": 1},
-            {"codigo_producto": "PS-002", "cantidad": 1, "precio_unidad": 15.0, "numero_linea": 2}
+            {
+                "codigo_producto": "PN-001",
+                "cantidad": 3,
+                "precio_unidad": 3.5,
+                "numero_linea": 1
+            },
+            {
+                "codigo_producto": "PS-002",
+                "cantidad": 1,
+                "precio_unidad": 15.0,
+                "numero_linea": 2
+            }
         ]
     },
     {
@@ -13,8 +23,37 @@
         "codigo_cliente": "CL-002",
         "fecha_pedido": "2024-10-02",
         "detalles_pedido": [
-            {"codigo_producto": "PN-003", "cantidad": 5, "precio_unidad": 2.5, "numero_linea": 1},
-            {"codigo_producto": "PS-001", "cantidad": 2, "precio_unidad": 12.0, "numero_linea": 2}
+            {
+                "codigo_producto": "PN-003",
+                "cantidad": 5,
+                "precio_unidad": 2.5,
+                "numero_linea": 1
+            },
+            {
+                "codigo_producto": "PS-001",
+                "cantidad": 2,
+                "precio_unidad": 12.0,
+                "numero_linea": 2
+            }
+        ]
+    },
+    {
+        "codigo_pedido": 3,
+        "codigo_cliente": "CL-001",
+        "fecha_pedido": "10/01/2025",
+        "detalles_pedido": [
+            {
+                "codigo_producto": "PN-002",
+                "cantidad": 1,
+                "precio_unitario": 8.5,
+                "numero_linea": 4
+            },
+            {
+                "codigo_producto": "PS-005",
+                "cantidad": 2,
+                "precio_unitario": 2.0,
+                "numero_linea": 3
+            }
         ]
     }
 ]

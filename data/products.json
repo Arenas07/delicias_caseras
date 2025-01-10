@@ -2,7 +2,7 @@
     {
         "codigo_producto": "PN-001",
         "nombre": "Pan Integral",
-        "categoria": "Panes",
+        "categoria": "panes",
         "descripcion": "Pan de harina integral con semillas.",
         "proveedor": "Panadería Natural",
         "cantidad_en_stock": 57,
@@ -12,18 +12,18 @@
     {
         "codigo_producto": "PS-002",
         "nombre": "Pastel de Chocolate",
-        "categoria": "Pastel",
+        "categoria": "pastel",
         "descripcion": "Pastel de chocolate con cobertura cremosa.",
         "proveedor": "Pastelería Dulce Tentación",
-        "cantidad_en_stock": 30,
+        "cantidad_en_stock": 35,
         "precio_venta": 15.0,
         "precio_proveedor": 10.0
     },
     {
         "codigo_producto": "PT-003",
         "nombre": "Postre de limón",
-        "categoria": "Postre",
-        "descripcion": "UN postre hecho a base de limón",
+        "categoria": "postre",
+        "descripcion": "Un postre hecho a base de limón",
         "proveedor": "Limones",
         "cantidad_en_stock": 10,
         "precio_venta": 5.0,
@@ -32,7 +32,7 @@
     {
         "codigo_producto": "PS-005",
         "nombre": "GALLETAS DE CHOCOLATE",
-        "categoria": "Panes",
+        "categoria": "panes",
         "descripcion": "RICAS GALLETAS DE CHOCOLATE ",
         "proveedor": "SANITAS",
         "cantidad_en_stock": 15,
@@ -42,7 +42,7 @@
     {
         "codigo_producto": "PN-002",
         "nombre": "Pan de queso",
-        "categoria": "Panes",
+        "categoria": "panes",
         "descripcion": "Pan relleno de queso",
         "proveedor": "Panaderia la queseria",
         "cantidad_en_stock": 40,
