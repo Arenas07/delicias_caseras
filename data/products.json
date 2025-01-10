@@ -38,5 +38,15 @@
         "cantidad_en_stock": 15,
         "precio_venta": 2.0,
         "precio_proveedor": 12.0
+    },
+    {
+        "codigo_producto": "PN-002",
+        "nombre": "Pan de queso",
+        "categoria": "Panes",
+        "descripcion": "Pan relleno de queso",
+        "proveedor": "Panaderia la queseria",
+        "cantidad_en_stock": 40,
+        "precio_venta": 8.5,
+        "precio_proveedor": 4.0
     }
 ]

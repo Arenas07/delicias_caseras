@@ -8,12 +8,14 @@ def obtener_opcion():
             Menu de productos
                 1. Ver productos
                 2. Ver productos por categoria
-                3. Actualizar el inventario de un producto
-                4. Agregar un nuevo producto al stock
+                3. Buscar producto por código
+                4. Buscar producto por nombre
+                5. Actualizar el inventario de un producto
+                6. Agregar un nuevo producto al stock
                 0. Salir 
             """)
             opcion = int(input())
-            if 0 <= opcion <= 4:  # Asegura que la opción esté dentro de un rango válido
+            if 0 <= opcion <= 6:  # Asegura que la opción esté dentro de un rango válido
                 return opcion
             else:
                 print("Por favor, ingrese un número entre 1 y 4.")

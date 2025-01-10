@@ -24,21 +24,30 @@ def updateInventoryByCode(product_code):
             print(f"Se actualizó el {product_code} a {stock}")
     print(saveAll(data))
 
-def newProduct(codigo_producto, nombre, categoria, descripcion, proveedor, cantidad_en_stock, precio_venta, precio_proveedor):
+def newProduct():
     data = findAll()
-    newProduct = {
-        "codigo_producto": codigo_producto,
-        "nombre": nombre,
-        "categoria": categoria,
-        "descripcion": descripcion,
-        "proveedor": proveedor,
-        "cantidad_en_stock": cantidad_en_stock,
-        "precio_venta": precio_venta,
-        "precio_proveedor": precio_proveedor
-    }
-    data.append(newProduct)
-    saveAll(data)
-    return "Producto agregado exitosamente"
+    codigo_producto = input("Ingrese el código del producto: ")
+    findProducts = list(filter(lambda product: product.get("codigo_producto") == codigo_producto, data))
+    if(not len(findProducts)):
+        newProduct = {
+            "codigo_producto": codigo_producto,
+            "nombre": input("Ingrese el nombre del producto: "),
+            "categoria": input("Ingrese la categoria del producto ('Panes', 'Pastel', 'Postre'): ").capitalize(),
+            "descripcion": input("Ingrese la descripción del producto: "),
+            "proveedor": input("Ingrese el proveedor de dicho producto: "),
+            "cantidad_en_stock": int(input("Ingrese la cantidad en stock del producto: ")),
+            "precio_venta": float(input("Ingrese el precio de venta del producto: ")),
+            "precio_proveedor": float(input("Ingrese el precio del proveedor: "))
+     }
+        data.append(newProduct)
+        saveAll(data)
+        return "Producto agregado exitosamente"
+    else:
+        print("""
+        *********************
+            ERROR-ERROR 
+        El producto ya existe
+        *********************""")
 
 
 
