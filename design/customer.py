@@ -1,8 +1,10 @@
-from logic.products import findAll as findAllProducts
-from logic.order import findAllOrders, saveAll, findAllProducts as findAllProducts1
+from logic.products import findAll as findAllProducts, saveAll as saveAllProducts
+from logic.order import findAllOrders, saveAll
 from tabulate import tabulate
 from datetime import datetime
+from formula.order import *
 import random
+
 
 def designClient():
     print("""
@@ -24,7 +26,7 @@ def formularyTakeOrder():
     # Mostrar productos disponibles
     print("Lista de productos en stock")
     findProductsMajor = list(filter(lambda product: product.get("cantidad_en_stock") > 0, dataProducts))
-    findProducts = list(filter(lambda product: (product.pop("descripcion"), (product.pop("proveedor"), (product.pop("precio_proveedor"), (product.pop("categoria"))))), findProductsMajor))
+    findProducts = [{key: product[key] for key in product if key not in ["descripcion", "proveedor", "precio_proveedor", "categoria"]} for product in findProductsMajor]
     print(tabulate(findProducts, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
 
     # Obtener la fecha actual
@@ -42,9 +44,7 @@ def formularyTakeOrder():
         "detalles_pedido": []
     }
 
-    # Añadir productos al pedido
-    while True:
-        # Pedir los datos de un producto
+    while True:  # Añadir productos al pedido
         while True:
             codigo_producto = input("Ingrese el código del producto: ")
 
@@ -52,20 +52,13 @@ def formularyTakeOrder():
             product = next((prod for prod in dataProducts if prod["codigo_producto"] == codigo_producto), None)
 
             if product:
-                # Obtener el precio de venta y generar el número de línea aleatorio
                 precio_unitario = product["precio_venta"]
                 numero_linea = random.randint(1, 5)
 
-                # Añadir el producto al pedido
-                formulary["detalles_pedido"].append({
-                    "codigo_producto": codigo_producto,
-                    "cantidad": int(input("Ingrese la cantidad del producto: ")),
-                    "precio_unitario": precio_unitario,
-                    "numero_linea": numero_linea
-                })
+                # Llamar a la función para ajustar el stock y añadir el producto al pedido
+                adjustStockAndAddToOrder(product, dataProducts, formulary, codigo_producto, precio_unitario, numero_linea)
                 break  # Salir del bucle una vez que el producto se ha agregado correctamente
             else:
-                # Si no se encuentra el producto, seguir pidiendo el código
                 print("Código no encontrado, vuelva a digitar.")
 
         # Preguntar si desea agregar otro producto
@@ -84,6 +77,12 @@ def formularyTakeOrder():
     else:
         print("No se guardó el pedido porque no se añadieron productos válidos.")
 
+def seeOrders():
+    data = findAllOrders()
 
-
+    for pedido in data:
+        print(f"--- Pedido: {pedido['codigo_pedido']} | Cliente: {pedido['codigo_cliente']} | Fecha: {pedido['fecha_pedido']}")
+        print(tabulate  (pedido["detalles_pedido"], headers="keys", tablefmt="grid", numalign="center"))
+        print("\n" + "="*50 + "\n")
+    input("Presione Enter para continuar: ")
     

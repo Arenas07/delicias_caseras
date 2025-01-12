@@ -6,11 +6,11 @@ from design.order import *
 
 def menu():
     print("""
-          ****************************************
-                Bienvenido al menú principal
-             Pedidos clientes   |   Productos
-                     1          |       2
-          ****************************************
+          *************************************************************************
+                                Bienvenido al menú principal
+             Registrar pedidos   |   Productos   |   Editar pedidos   |   Salir      
+                     1           |       2       |         3          |     0
+          *************************************************************************
           """)
     principal = input("Ingrese el número de la opción: ")
     match principal:
@@ -20,6 +20,10 @@ def menu():
                match option:
                    case "1":
                        formularyTakeOrder()
+                   case "2":
+                       seeOrders()
+                   case "0":
+                       break
                        
         case "2":
             while True:
@@ -28,7 +32,7 @@ def menu():
                     case 1:
                         tableProducts()
                     case 2:
-                        tableProductsByCategory(input("Ingrese la categoria. Ejemplo ('panes', 'pastel', 'postre'): ").lower())
+                        tableProductsByCategory(input("Ingrese la categoria. Ejemplo ('pan', 'pastel', 'postre'): ").lower())
                     case 3:
                         tableProductsByCode(input("Ingrese el codigo del producto: "))
                     case 4:
