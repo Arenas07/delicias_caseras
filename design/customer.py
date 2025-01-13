@@ -20,23 +20,17 @@ def designClient():
 
 
 def formularyTakeOrder():
-    dataProducts = findAllProducts()  # Obtener todos los productos
-    dataOrders = findAllOrders()  # Obtener los pedidos actuales
-
-    # Mostrar productos disponibles
+    dataProducts = findAllProducts()  
+    dataOrders = findAllOrders()  
     print("Lista de productos en stock")
     findProductsMajor = list(filter(lambda product: product.get("cantidad_en_stock") > 0, dataProducts))
     findProducts = [{key: product[key] for key in product if key not in ["descripcion", "proveedor", "precio_proveedor", "categoria"]} for product in findProductsMajor]
     print(tabulate(findProducts, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
 
-    # Obtener la fecha actual
     now = datetime.now()
     format = now.strftime("%d/%m/%Y")
+    new_order_code = dataOrders[-1]["codigo_pedido"] + 1 if dataOrders else 1  
 
-    # Generar el código del nuevo pedido
-    new_order_code = dataOrders[-1]["codigo_pedido"] + 1 if dataOrders else 1  # Si no hay pedidos, empezar desde 1
-
-    # Crear un formulario para el nuevo pedido
     formulary = {
         "codigo_pedido": new_order_code,
         "codigo_cliente": input("Ingrese el código del cliente (EJ: CL-001): "),
@@ -44,34 +38,25 @@ def formularyTakeOrder():
         "detalles_pedido": []
     }
 
-    while True:  # Añadir productos al pedido
+    while True:  
         while True:
             codigo_producto = input("Ingrese el código del producto: ")
-
-            # Buscar el producto en la base de datos para obtener el precio de venta
             product = next((prod for prod in dataProducts if prod["codigo_producto"] == codigo_producto), None)
-
             if product:
                 precio_unitario = product["precio_venta"]
                 numero_linea = random.randint(1, 5)
-
-                # Llamar a la función para ajustar el stock y añadir el producto al pedido
                 adjustStockAndAddToOrder(product, dataProducts, formulary, codigo_producto, precio_unitario, numero_linea)
-                break  # Salir del bucle una vez que el producto se ha agregado correctamente
+                break  
             else:
                 print("Código no encontrado, vuelva a digitar.")
 
-        # Preguntar si desea agregar otro producto
         otra = input("¿Desea agregar otro producto? (s/n): ")
         if otra.lower() != 's':
-            break  # Salir del ciclo si no se desea agregar más productos
+            break  
 
-    # Si el pedido tiene productos, lo guardamos
+
     if formulary["detalles_pedido"]:
-        # Añadir el nuevo pedido a la lista de pedidos
         dataOrders.append(formulary)
-
-        # Guardar los pedidos actualizados en el archivo JSON
         saveAll(dataOrders)
         print("Se guardó el pedido correctamente")
     else:

@@ -4,8 +4,8 @@
         "nombre": "Pan Integral",
         "categoria": "pan",
         "descripcion": "Pan de harina integral con semillas.",
-        "proveedor": "PanaderÃ­a Natural",
-        "cantidad_en_stock": 25,
+        "proveedor": "Panaderia Natural",
+        "cantidad_en_stock": 69,
         "precio_venta": 3.5,
         "precio_proveedor": 2.0
     },
@@ -14,16 +14,16 @@
         "nombre": "Pastel de Chocolate",
         "categoria": "pastel",
         "descripcion": "Pastel de chocolate con cobertura cremosa.",
-        "proveedor": "PastelerÃ­Â­a Dulce TentaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n",
-        "cantidad_en_stock": 30,
+        "proveedor": "Pasteleria Dulce Tentacion",
+        "cantidad_en_stock": 14,
         "precio_venta": 15.0,
         "precio_proveedor": 10.0
     },
     {
         "codigo_producto": "PT-003",
-        "nombre": "Postre de limÃ³n",
+        "nombre": "Postre de limon",
         "categoria": "postre",
-        "descripcion": "Un postre hecho a base de limÃ³n",
+        "descripcion": "Un postre hecho a base de limon",
         "proveedor": "Limones",
         "cantidad_en_stock": 10,
         "precio_venta": 5.0,
@@ -35,7 +35,7 @@
         "categoria": "pan",
         "descripcion": "RICAS GALLETAS DE CHOCOLATE ",
         "proveedor": "SANITAS",
-        "cantidad_en_stock": 10,
+        "cantidad_en_stock": 5,
         "precio_venta": 2.0,
         "precio_proveedor": 12.0
     },
@@ -45,8 +45,18 @@
         "categoria": "pan",
         "descripcion": "Pan relleno de queso",
         "proveedor": "Panaderia la queseria",
-        "cantidad_en_stock": 20,
+        "cantidad_en_stock": 19,
         "precio_venta": 8.5,
         "precio_proveedor": 4.0
+    },
+    {
+        "codigo_producto": "PS-003",
+        "nombre": "Pastel de fresa",
+        "categoria": "pastel",
+        "descripcion": "Pastel de fresa",
+        "proveedor": "Pasteleria rosita fresita",
+        "cantidad_en_stock": 30,
+        "precio_venta": 17.3,
+        "precio_proveedor": 12.0
     }
 ]

@@ -3,6 +3,7 @@ from design.general import *
 from logic.products import updateInventoryByCode
 from design.customer import *
 from design.order import *
+from logic.order import *
 
 def menu():
     print("""
@@ -23,8 +24,7 @@ def menu():
                    case "2":
                        seeOrders()
                    case "0":
-                       break
-                       
+                        return menu()  
         case "2":
             while True:
                 option = obtener_opcion()
@@ -43,5 +43,19 @@ def menu():
                         newProduct() 
                     case 0:
                         return menu()
+        case "3":
+            while True:
+                option = designOrder()
+                match option:
+                    case 1:
+                        editOrder(int(input("Ingrese el codigo del pedido: ")))
+                    case 2:
+                        deleteJSON(int(input("Ingrese el codigo del pedido: ")))
+                    case 0:
+                        return menu()
+        case "0":
+            print("Gracias por utilizar nuestro sistema")
+            return
         case _:
+
             print("Opción no válida")
