@@ -1,7 +1,7 @@
 from logic.products import findAll, saveAll
 from tabulate import tabulate
 
-def obtener_opcion():
+def obtener_opcion(): 
     while True:
         try:
             print("""
@@ -20,60 +20,61 @@ def obtener_opcion():
             if 0 <= opcion <= 6:  # Asegura que la opción esté dentro de un rango válido
                 return opcion
             else:
-                print("Por favor, ingrese un número entre 1 y 4.")
+                print("Por favor, ingrese un número entre 0 y 6.")
+                input("Presione enter para continuar: ")
         except ValueError:
             print("Error: Por favor ingrese un número válido.")
 
-def tableProducts():
-    data = findAll()
+def tableProducts(): #Muestra todos los productos dispnibles
+    data = findAll() #Toma la información de los productos
     dataModify = []
-    for diccionario in data:
+    for diccionario in data: #Ciclo para modificar la longitud de la tabla a mostrar
         diccionario.pop("descripcion")
         diccionario.pop("proveedor")
         diccionario.pop("precio_proveedor")
-        dataModify.append(diccionario)
+        dataModify.append(diccionario) #Almacena los cambios realizados
     print(tabulate(dataModify, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
     input("--> Presione enter para continuar")
-def tableProductsByCategory(Category):
-    data = findAll()
+def tableProductsByCategory(Category): #Busca los productos por categoría
+    data = findAll() #Toma la información de los productos
     dataModify = []
-    for diccionario in data:
-        if(diccionario.get("categoria") == Category):
+    for diccionario in data: #Ciclo para ir pasando por cada uno de los productos
+        if(diccionario.get("categoria") == Category): #Si la categoría del producto es igual a la categoría ingresada
             diccionario.pop("descripcion")
             diccionario.pop("proveedor")
             diccionario.pop("precio_proveedor")
-            dataModify.append(diccionario)
+            dataModify.append(diccionario) #Almacena los cambios realizados
     print(tabulate(dataModify, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
     input("--> Presione enter para continuar")
 
-def tableProductsByCode(Code):
-    data = findAll()
+def tableProductsByCode(Code): #Muestra los productos por código
+    data = findAll()#Toma la información de los productos
     dataModify = []
-    for diccionario in data:
-        if(diccionario.get("codigo_producto") == Code):
+    for diccionario in data: #Ciclo para ir pasando por cada uno de los productos
+        if(diccionario.get("codigo_producto") == Code): #Si el codigo del producto es igual al codigo ingresada
             diccionario.pop("descripcion")
             diccionario.pop("proveedor")
             diccionario.pop("precio_proveedor")
-            dataModify.append(diccionario)
+            dataModify.append(diccionario) #Almacena los cambios realizados
     print(tabulate(dataModify, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
     input("--> Presione enter para continuar")  
 
-def tableProductsByName(Name):
-    data = findAll()
+def tableProductsByName(Name): #Muestra los productos por nombre
+    data = findAll()#Toma la información de los productos
     dataModify = []
-    for diccionario in data:
-        if(diccionario.get("nombre") == Name):
+    for diccionario in data: #Ciclo para ir pasando por cada uno de los productos
+        if(diccionario.get("nombre") == Name): #Si la categoría del producto es igual a la categoría ingresada
             diccionario.pop("descripcion")
             diccionario.pop("proveedor")
             diccionario.pop("precio_proveedor")
-            dataModify.append(diccionario)
+            dataModify.append(diccionario) #Almacena los cambios realizados
     print(tabulate(dataModify, headers="keys", tablefmt="grid", numalign="center", showindex="always"))
     input("--> Presione enter para continuar")        
-def newProduct():
-    data = findAll()
+def newProduct(): #Agregar un nuevo producto
+    data = findAll() #Toma la información de los productos
     codigo_producto = input("Ingrese el código del producto: ")
-    findProducts = list(filter(lambda product: product.get("codigo_producto") == codigo_producto, data))
-    if(not len(findProducts)):
+    findProducts = list(filter(lambda product: product.get("codigo_producto") == codigo_producto, data)) #Filtro para comparar si el dato ingresado existe
+    if(not len(findProducts)): #Si no existe registra los datos
         newProduct = {
             "codigo_producto": codigo_producto,
             "nombre": input("Ingrese el nombre del producto: "),
@@ -83,8 +84,8 @@ def newProduct():
             "cantidad_en_stock": int(input("Ingrese la cantidad en stock del producto: ")),
             "precio_venta": float(input("Ingrese el precio de venta del producto: ")),
             "precio_proveedor": float(input("Ingrese el precio del proveedor: "))
-     }
-        data.append(newProduct)
+        }
+        data.append(newProduct) #Une los datos a la variable y la guarda
         saveAll(data)
         return "Producto agregado exitosamente"
         

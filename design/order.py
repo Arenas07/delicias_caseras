@@ -8,6 +8,6 @@ def designOrder():
         0. Salir
           *********************
         """)
-    opc = int(input())
+    opc = input()
     return opc
 

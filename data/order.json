@@ -6,7 +6,7 @@
         "detalles_pedido": [
             {
                 "codigo_producto": "PN-001",
-                "cantidad": 11,
+                "cantidad": 20,
                 "precio_unidad": 3.5,
                 "numero_linea": 1
             },
@@ -97,20 +97,20 @@
     },
     {
         "codigo_pedido": 7,
-        "codigo_cliente": "PN-002",
-        "fecha_pedido": "12/01/2025",
+        "codigo_cliente": "CL-008",
+        "fecha_pedido": "14/01/2025",
         "detalles_pedido": [
+            {
+                "codigo_producto": "PS-005",
+                "cantidad": 5,
+                "precio_unitario": 2.0,
+                "numero_linea": 4
+            },
             {
                 "codigo_producto": "PN-002",
                 "cantidad": 1,
                 "precio_unitario": 8.5,
                 "numero_linea": 3
-            },
-            {
-                "codigo_producto": "PS-005",
-                "cantidad": 5,
-                "precio_unitario": 2.0,
-                "numero_linea": 2
             }
         ]
     }

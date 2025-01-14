@@ -5,7 +5,7 @@
         "categoria": "pan",
         "descripcion": "Pan de harina integral con semillas.",
         "proveedor": "Panaderia Natural",
-        "cantidad_en_stock": 69,
+        "cantidad_en_stock": 60,
         "precio_venta": 3.5,
         "precio_proveedor": 2.0
     },
@@ -25,13 +25,13 @@
         "categoria": "postre",
         "descripcion": "Un postre hecho a base de limon",
         "proveedor": "Limones",
-        "cantidad_en_stock": 10,
+        "cantidad_en_stock": 30,
         "precio_venta": 5.0,
         "precio_proveedor": 2.5
     },
     {
         "codigo_producto": "PS-005",
-        "nombre": "GALLETAS DE CHOCOLATE",
+        "nombre": "Galletas De Chocolate",
         "categoria": "pan",
         "descripcion": "RICAS GALLETAS DE CHOCOLATE ",
         "proveedor": "SANITAS",
@@ -41,17 +41,17 @@
     },
     {
         "codigo_producto": "PN-002",
-        "nombre": "Pan de queso",
+        "nombre": "Pan De Queso",
         "categoria": "pan",
         "descripcion": "Pan relleno de queso",
         "proveedor": "Panaderia la queseria",
-        "cantidad_en_stock": 19,
+        "cantidad_en_stock": 18,
         "precio_venta": 8.5,
         "precio_proveedor": 4.0
     },
     {
         "codigo_producto": "PS-003",
-        "nombre": "Pastel de fresa",
+        "nombre": "Pastel De Fresa",
         "categoria": "pastel",
         "descripcion": "Pastel de fresa",
         "proveedor": "Pasteleria rosita fresita",
