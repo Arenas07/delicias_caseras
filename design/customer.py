@@ -1,8 +1,8 @@
-from logic.products import findAll as findAllProducts, saveAll as saveAllProducts
+from logic.products import findAll as findAllProducts
 from logic.order import findAllOrders, saveAll
 from tabulate import tabulate
 from datetime import datetime
-from formula.order import *
+from formula.order import adjustStockAndAddToOrder
 import random
 
 
@@ -66,13 +66,4 @@ def formularyTakeOrder(): #Formulario para realizar un pedido
     else:
         print("No se guardó el pedido porque no se añadieron productos válidos.")
 
-def seeOrders(): #Función para ver las ordenes realizadas
-    data = findAllOrders() #Data va a tomar la informacion de todos los pedidos
-
-    for pedido in data: #Recorre todos los pedidos en la data
-        print(f"--- Pedido: {pedido['codigo_pedido']} | Cliente: {pedido['codigo_cliente']} | Fecha: {pedido['fecha_pedido']}") 
-        #Toma los valores de la llave en la que está posicionado actualmente para poder imprimir despues
-        print(tabulate  (pedido["detalles_pedido"], headers="keys", tablefmt="grid", numalign="center"))
-        print("\n" + "="*50 + "\n")
-    input("Presione Enter para continuar: ")
     

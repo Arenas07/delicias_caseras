@@ -15,7 +15,7 @@
         "categoria": "pastel",
         "descripcion": "Pastel de chocolate con cobertura cremosa.",
         "proveedor": "Pasteleria Dulce Tentacion",
-        "cantidad_en_stock": 14,
+        "cantidad_en_stock": 18,
         "precio_venta": 15.0,
         "precio_proveedor": 10.0
     },
@@ -35,7 +35,7 @@
         "categoria": "pan",
         "descripcion": "RICAS GALLETAS DE CHOCOLATE ",
         "proveedor": "SANITAS",
-        "cantidad_en_stock": 5,
+        "cantidad_en_stock": 2,
         "precio_venta": 2.0,
         "precio_proveedor": 12.0
     },
@@ -45,7 +45,7 @@
         "categoria": "pan",
         "descripcion": "Pan relleno de queso",
         "proveedor": "Panaderia la queseria",
-        "cantidad_en_stock": 18,
+        "cantidad_en_stock": 21,
         "precio_venta": 8.5,
         "precio_proveedor": 4.0
     },
@@ -55,7 +55,7 @@
         "categoria": "pastel",
         "descripcion": "Pastel de fresa",
         "proveedor": "Pasteleria rosita fresita",
-        "cantidad_en_stock": 30,
+        "cantidad_en_stock": 60,
         "precio_venta": 17.3,
         "precio_proveedor": 12.0
     }

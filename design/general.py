@@ -1,9 +1,8 @@
-from design.products import *
-from design.general import *
+from design.products import obtener_opcion, tableProducts, tableProductsByCode, tableProductsByCategory, tableProductsByName, newProduct
 from logic.products import updateInventoryByCode
-from design.customer import *
-from design.order import *
-from logic.order import *
+from design.customer import designClient, formularyTakeOrder
+from design.order import designOrder, seeOrders
+from logic.order import deleteJSON, editOrder, removeProductFromOrder
 
 def menu(): #Menu principal
     print("""
@@ -54,9 +53,11 @@ def menu(): #Menu principal
                 option = designOrder()
                 match option:
                     case "1":
-                        editOrder((input("Ingrese el codigo del pedido: ")))
+                        editOrder(int(input("Ingrese el codigo del pedido: ")))
                     case "2":
-                        deleteJSON((input("Ingrese el codigo del pedido: ")) )
+                        deleteJSON(int(input("Ingrese el codigo del pedido: ")) )
+                    case "3":
+                        removeProductFromOrder(int(input("Ingrese el codigo del pedido: ")))
                     case "0":
                         return menu()
                     case _:

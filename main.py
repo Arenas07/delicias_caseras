@@ -1,5 +1,5 @@
 
-from design.general import *
+from design.general import menu
 menu()
 
 
