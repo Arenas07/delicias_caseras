@@ -52,14 +52,15 @@ def editOrder(order_code): #Funcion para poder editar la cantidad pedida en la o
                 })
 
             # Guardar cambios en el archivo JSON
-            saveAll(data_orders)
+            
 
             print(f"\nPedido {order_code} actualizado con éxito.")
             break
     else: #Si no encuentra el codigo de la orden
         print(f"No se encontró ningún pedido con codigo_pedido {order_code}.")
         input("Presione enter para continuar: ")
-
+    print(saveProduct(data_products))  
+    print(saveAll(data_orders))
 
 def deleteJSON(product_code): #Borrar un pedido realizado
     info = findAllOrders()
